@@ -1,17 +1,17 @@
-var trainData = new Firebase("https://train-time.firebaseio.com/");
+var volunsubmission = new Firebase("https://helpinghandsform.firebaseio.com/");
 
-$("#addTrainBtn").on("click", function(){
+$("#submit").on("click", function(){
 
-    var trainName = $("#trainNameInput").val().trim();
-    var destiEntry = $("#destinationInput").val().trim();
-    var trainStart = moment($("#startInput").val().trim(), "DD/MM/YY").format("X");
-    var freqEntry = $("#frequencyInput").val().trim();
+    var volName = $("#NameInput").val().trim();
+    var volEmail = $("#emailInput").val().trim();
+    var volPhone = $("#phonInput").val().trim();
+    var volSkills = $("#skillsInput").val().trim();
 
     var newTrain = {
-        name:  trainName,
-        destination: destiEntry,
-        start: trainStart,
-        frequency: freqEntry
+        name:  volName,
+        destination: volEmail,
+        start: volPhone,
+        frequency: volSkills
     }
 
     trainData.push(newTrain);
@@ -23,10 +23,10 @@ $("#addTrainBtn").on("click", function(){
 
     alert("Train successfully added");
 
-    $("#trainNameInput").val("");
-    $("#destinationInput").val("");
-    $("#startInput").val("");
-    $("#frequencyInput").val("");
+    $("#NameInput").val("");
+    $("#emailInput").val("");
+    $("#phonInput").val("");
+    $("#skillsInput").val("");
 
     return false;
 });
@@ -36,24 +36,24 @@ trainData.on("child_added", function(childSnapshot, prevChildKey){
 
     console.log(childSnapshot.val());
 
-    var trainName = childSnapshot.val().name;
-    var destiEntry = childSnapshot.val().role;
-    var trainStart = childSnapshot.val().start;
-    var freqEntry = childSnapshot.val().rate;
+    var volName = childSnapshot.val().name;
+    var volEmail = childSnapshot.val().role;
+    var volPhone = childSnapshot.val().start;
+    var volSkills = childSnapshot.val().rate;
 
-    console.log(trainName);
-    console.log(destiEntry);
-    console.log(trainStart);
-    console.log(freqEntry);
+    console.log(volName);
+    console.log(volEmail);
+    console.log(volPhone);
+    console.log(volSkills);
 
-    var trainStartPretty = moment.unix(trainStart).format("1111");
-    var trainNext = moment().diff(moment.unix(trainStart, '1111'), "1111");
+    var volPhonePretty = moment.unix(volPhone).format("1111");
+    var trainNext = moment().diff(moment.unix(volPhone, '1111'), "1111");
     console.log(trainNext);
 
-    var minsAway = freqEntry + trainStart;
+    var minsAway = volSkills + volPhone;
     console.log(minsAway);
 
-    $("#trainschedule > tbody").append("<tr><td>" + trainName + "</td><td>" + destiEntry + "</td><td>" + trainStart + "</td><td>" + freqEntry + "</td><td>" + minsAway + "</td><td>");
+    $("#trainschedule > tbody").append("<tr><td>" + volName + "</td><td>" + volEmail + "</td><td>" + volPhone + "</td><td>" + volSkills + "</td><td>" + minsAway + "</td><td>");
 
 });
 
