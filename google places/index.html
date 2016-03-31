@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>Helping Hands</title>
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+ <!--        <link type="javascript" href="assets/javascript/script.js">
+ -->        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUPhsT6dAMGYtiRZwcnU_uEhn7NK3R8Ak&libraries=places&callback=initMap" async defer></script> //
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2>Helping hands</h2>
+            <h3>Let us show you where to look</h3>
+        
+        </header>
+
+        <div id="container" class="container">
+            <div id="gmap_canvas"></div>
+            <div class="actions">
+                <div class="button">
+                    <label for="gmap_where">Where:</label>
+                    <input id="gmap_where" type="text" name="gmap_where" /></div>
+                <div id="button2" class="button" onclick="findAddress(); return false;">Search for address</div>
+                <div class="button">
+                    <label for="gmap_keyword">Keyword (optional):</label>
+                    <input id="gmap_keyword" type="text" name="gmap_keyword" /></div>
+                <div class="button">
+                    <label for="gmap_type">Type:</label>
+                    <select id="gmap_type">
+                        <option value="Food Bank">food bank</option>
+                        <option value="Shelter">shleter</option>
+                        <option value="Free Clinic">free clinic</option>
+                        <option value="Domestic Violence Resoucres">domestic violence resoures</option>
+                        <option value="Soup Kitchen">soup kitchen</option>
+                       <!--  <option value="food">food</option> -->
+                        <option value="Hospital">hospital</option>
+                        <option value="Police">police</option>
+                     <!--    <option value="store">store</option> -->
+                    </select>
+                </div>
+                <div class="button">
+                    <label for="gmap_radius">Radius:</label>
+                    <select id="gmap_radius">
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="1500">1500</option>
+                        <option value="5000">5000</option>
+                    </select>
+                </div>
+                <input type="hidden" id="lat" name="lat" value="40.7143528" />
+                <input type="hidden" id="lng" name="lng" value="-74.0059731" />
+                <div id="button1" class="button" onclick="findPlaces(); return false;">Search for objects</div>
+            </div>
+        </div>
+    </body>
