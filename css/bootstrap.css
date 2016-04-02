@@ -45,6 +45,11 @@ template {
 a {
   background-color: transparent;
 }
+
+#assistform {
+  display: none;
+  visibility: hidden;
+}
 a:active,
 a:hover {
   outline: 0;

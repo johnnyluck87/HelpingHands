@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+    1. The button's click event listener isn't working, fix it
+
+    2. Instead of JavaScript, refactor the below code to use jQuery
+
+-->
+<head>
+    <title></title>
+</head>
+<body>
+
+    <button>Come at me bro</button>
+    
+<script type="text/javascript">
+    window.onload = function(){
+        var button = document.querySelector('button')
+
+        var dog = {
+            dogName: 'fido',
+            dogNoise: function(){
+                alert('woof woof');
+            }
+        }
+
+        button.on("click", dog.dogNoise());
+
+        // button.addEventListener('click', dog.dogNoise());
+
+
+    }
+</script>
+
+</body>
+</html>
