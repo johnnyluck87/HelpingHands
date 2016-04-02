@@ -1,38 +1,103 @@
+$(document).ready(function(){
 
-$(document).ready(function() {
-
-	// register event handlers
-
-	$('#findButton').on('click', search);
+	$('#search-form').on('submit',search);
 });
 
-
-function search() {
+function search(event) {
 
 	var query = $('#searchText').val();
 
 	if(!query)
 		return;
 
-	searchOpportunities(query, function(data){
+	$('#org-list').empty();
+	event.preventDefault();
 
-		if(data) {
+	$('#checkbox input:checked').each(function(){
 
-			for(var i in data.opportunities) {
+		if(this.name === "opportunities")
+			displayOportunnities(query);
 
-				var opp = data.opportunities[i];
+		if(this.name === "organizations")
+			displayOrganizations(query);
 
-				var li = $('<li>');
-				var a = $('<a>');
-
-				// we have to decode the link because it replaces special chars with code like %20 for spaces
-				a.attr('href',decodeURIComponent(opp.vmUrl));
-				a.text(opp.parentOrg.name);
-				
-				li.append(a);
-				$('#org-list').append(li);
-			}
-		}
 	});
 
 }
+
+
+function listItem(item) {
+
+
+	var li = $('<li>');
+	var a = $('<a>');
+	var span = $('<span>');
+
+	a.attr('href',item.link.url);
+	a.text(item.link.text);
+	span.html(item.description);
+	li.append(a, span);
+
+	$('#org-list').append(li);
+}
+
+
+
+function displayOportunnities(query) {
+
+	searchOpportunities(query).then(function(data){
+
+		if(!data) {
+			console.error("No data received from searchOpportunities");
+			return;
+		}console.log(data);
+
+		for(var i in data.opportunities) {
+			
+			var opp = data.opportunities[i];
+
+			var item = {
+				link: {
+					text: opp.parentOrg.name,
+					url: decodeURIComponent(opp.vmUrl)
+				},
+				description: opp.description
+			};
+
+			listItem(item);
+		}
+	});
+}
+
+
+function displayOrganizations(query) {
+
+	searchOrganizations(query).then(function(data){
+
+		if(!data) {
+			console.error("No data received from searchOpportunities");
+			return;
+		}
+
+		console.log(data);
+
+		for(var i in data.organizations) {
+			
+			var org = data.organizations[i];
+
+			var item = {
+				link: {
+					text: org.name,
+					url: decodeURIComponent(org.vmUrl)
+				},
+				description: org.description
+			};
+
+			listItem(item);
+		}
+	});
+}
+
+
+
+

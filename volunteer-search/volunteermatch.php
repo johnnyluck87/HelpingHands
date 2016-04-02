@@ -272,13 +272,15 @@ date_default_timezone_set('America/New_York');
   $api = new VolunteerMatchAPI();
 
   $action = $_POST['action'];
-  $query = $_POST['query'];
+  $query = json_decode($_POST['query'],true);
 
 
   switch($action) {
 
     case 'searchOpportunities':
-      $data = $api->searchOpportunities(json_decode($query,true),null);
+      $data = $api->searchOpportunities($query);
+    case 'searchOrganizations':
+      $data = $api->searchOrganizations($query);
   }
 
   echo json_encode($data);
