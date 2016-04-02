@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Helping Hands</title>
+
+	<!-- Bootstap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- my custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- My App JS -->
+	<script type="text/javascript" src="js/volunteer-match-service2.js"></script>
+	<script type="text/javascript" src="js/view-controller.js"></script>
+
+</head>
+<body>
+
+<div id="main-container">
+
+   <!-- Jumbotron -->
+    <div class="jumbotron" style="background-color: black; color: white">
+        <!-- <h1 class="text-center">Train Time</h1> -->
+        <h3 class="text-center">Act as if what you do makes a difference. It does.<br> ~William James</h3>
+    </div>
+
+   <div class="panel panel-primary">
+         <div class="panel-heading">
+               <h3 class="panel-title"><strong>What is your passion?</strong></h3>
+          </div>
+    <div class="panel-body">
+
+  <form id="search-form" autocomplete="off">
+	<input type="text" placeholder="What are you interested in?" id="searchText" />
+	<input type="submit" value="Find" id="findButton" />
+	
+	<div id="checkbox">
+	
+	<input type="checkbox" name="opportunities" CHECKED />Volunteer Opportunities
+	<input type="checkbox" name="organizations" />Organizations
+	
+	</div>
+
+	<ul id="org-list">
+	</ul>
+  </form>
+
+  </div>
+  		</div>
+</div>
+
+</body>
+</html>

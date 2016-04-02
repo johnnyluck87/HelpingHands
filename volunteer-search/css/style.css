@@ -1,0 +1,46 @@
+
+
+body{
+	text-align: center;
+}
+
+
+input[type=button] {
+	height:35px;
+	background-color: #2e2efe;
+	color:white;
+	border:0;
+	border-radius: 5px;
+}
+
+ul {
+	list-style-type: none;
+	text-align: left;
+	width: 700px;
+	margin: 0 auto;
+}
+
+li {
+	overflow: hidden;
+	height: 100px;
+	margin: 20px;
+	background-color: white;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+#main-container {
+	height:500px;
+	width:960px;
+	margin:50px auto;
+}
+
+#searchText {
+	width:800px;
+	height:35px;
+}
+
+#checkbox input[type=checkbox] {
+	margin-right: 4px;
+	margin-top: 20px;
+}
