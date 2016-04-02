@@ -18,8 +18,8 @@ Nicole Brower
 HTML
 CSS- Bootstrap
 Javascript- JQuery
-			AJAX
-Proxy service
+AJAX
+Proxy
 Promise
 
 ## APIs used:
@@ -28,3 +28,6 @@ Google places
 Volunteer match
 Reddit
 Twitter
+
+## Heroku link:
+http://secure-eyrie-80815.herokuapp.com/
