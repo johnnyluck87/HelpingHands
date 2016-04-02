@@ -1,0 +1,49 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/mapstyle.css">
+
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+	<script src="js/map.js"></script>
+	<title>Google Maps</title>
+</head>
+<body>
+
+	<div id="gmap_canvas"></div>
+	<div class="actions">
+	    <div class="button">
+	        <label for="gmap_where">Where:</label>
+	        <input id="gmap_where" type="text" name="gmap_where" /></div>
+	    <div id="button2" class="button" onclick="findAddress(); return false;">Search for address</div>
+	    <div class="button">
+	        <label for="gmap_keyword">Keyword (optional):</label>
+	        <input id="gmap_keyword" type="text" name="gmap_keyword" /></div>
+	    <div class="button">
+	        <label for="gmap_type">Type:</label>
+	        <select id="gmap_type">
+	            <option value="shelter">shelter</option>
+	            <option value="food-bank">food bank</option>
+	            <option value="hospital">hospital</option>
+	            <option value="police">police</option>
+	        </select>
+	    </div>
+	    <div class="button">
+	        <label for="gmap_radius">Radius:</label>
+	        <select id="gmap_radius">
+	            <option value="500">500</option>
+	            <option value="1000">1000</option>
+	            <option value="1500">1500</option>
+	            <option value="5000">5000</option>
+	        </select>
+	    </div>
+	    <input type="hidden" id="lat" name="lat" value="40.7143528" />
+	    <input type="hidden" id="lng" name="lng" value="-74.0059731" />
+	    <div id="button1" class="button" onclick="findPlaces(); return false;">Search for objects</div>
+
+	</div>	
+
+</body>
+</html>

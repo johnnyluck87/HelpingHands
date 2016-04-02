@@ -19,9 +19,12 @@ HTML
 CSS- Bootstrap
 Javascript- JQuery
 			AJAX
+Proxy service
+Promise
 
 ## APIs used:
 
 Google places
 Volunteer match
 Reddit
+Twitter
